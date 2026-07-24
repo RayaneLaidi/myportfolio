@@ -1,0 +1,199 @@
+/**
+ * Styles globaux du portfolio
+ * Variables CSS, animations et composants de base
+ * 
+ * @author Rayane Laidi
+ * @version 2.0
+ * @description Feuille de styles principale définissant le thème minimaliste bleu,
+ * les animations, les composants réutilisables et la typographie globale
+ */
+
+@import "tailwindcss";
+
+/* ===== THÈME SIMPLE & MINIMALISTE ===== */
+/* Palette de couleurs bleues professionnelles */
+:root {
+  --bg-900: #0a0a0a;
+  --bg-800: #141414;
+  --page-gradient: linear-gradient(180deg, #0a0a0a 0%, #141414 50%, #0f0f0f 100%);
+  --card-bg: rgba(255, 255, 255, 0.02);
+  --accent: #3b82f6; /* Bleu principal */
+  --accent-2: #60a5fa; /* Bleu clair */
+  --muted: rgba(200, 200, 220, 0.6);
+  --text: #e5e5e5;
+  --glass-border: rgba(255, 255, 255, 0.06);
+
+  /* Boutons avec style unifié */
+  --btn-bg: #3b82f6;
+  --btn-hover: #2563eb;
+  --btn-color-dark: #ffffff;
+  --btn-radius: 8px;
+}
+
+/* ===== STYLES DE BASE ===== */
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  font-family: 'Poppins', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+  color: var(--text);
+  background: var(--page-gradient) !important;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* { box-sizing: border-box; }
+
+a {===== TYPOGRAPHIE ===== */
+
+/* Titres de section: inherit; text-decoration: none; }
+
+/* Titres */
+.section-title {
+  font-weight: 700;
+  font-size: clamp(28px, 5vw, 40px);
+  margin-bottom: 12px;
+  text-align: center;
+  color: var(--text);
+  letter-spacing: -0.02em;
+}
+
+.section-subtitle {
+  text-align: center;
+  font-size: 15px;
+  color: var(--muted);
+  margin-bottom: 36px;
+}===== ANIMATIONS ===== */
+/* Animations de fade, slide et glow pour les pages */
+
+
+/* Animations utilisées par les pages (fade/slide/glow) */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(16px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes subtleGlow {
+  from { opacity: 0.85; }
+  to { opacity: 1; }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.5s ease forwards;
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.5s ease forwards;
+}
+
+.animate-glow {
+  animation: subtleGlow 2.5s ease-in-out infinite alternate;
+}
+
+/* ===== COMPOSANTS ===== */
+
+/* Cards avec effet de verre dépoli */
+.glass-card {
+  background: rgba(255,255,255,0.02);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 10px;
+  color: var(--text);
+  transition: all 0.2s ease;
+}
+
+.glass-card:hover {
+  border-color: rgba(59, 130, 246, 0.3);
+  box-shadow: 0 8px 24px rgba(59, 130, 246, 0.1);
+  transform: translateY(-2px);
+}
+
+/* Boutons avec style minimaliste */
+.btn,
+button,
+.cta-button,
+input[type="submit"] {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px 24px;
+  font-weight: 500;
+  font-size: 14px;
+  color: var(--btn-color-dark);
+  background: var(--btn-bg);
+  border: none;
+  border-radius: var(--btn-radius);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-ghost,
+.button-ghost,
+.cta-button.outline {
+  background: transparent;
+  color: var(--text);
+  border: 1.5px solid rgba(255,255,255,0.15);
+}
+
+.btn:hover,
+.cta-button:hover,
+button:hover,
+input[type="submit"]:hover {
+  background: var(--btn-hover);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+}
+
+.btn:focus,
+button:focus,
+input[type="submit"]:focus {
+  outline: 2px solid rgba(110,231,183,0.14);
+  outline-offset: 2px;
+}
+Icônes et accents simples */
+.icon,
+.social-icon { 
+  color: var(--accent) !important;
+  transition: color 0.2s ease;
+}
+
+.icon:hover,
+.social-icon:hover {
+  color: var(--accent-2) !important;
+
+.social-icon { color: var(--accent) !important; }
+
+.kit-accent { color: var(--accent-2) !important; }
+
+/* Raindrop element (preserved if present) */
+.raindrop {
+  position: fixed;
+  width: 34px;
+  height: 34pminimaliste */
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-track { background: var(--bg-900); }
+::-webkit-scrollbar-thumb { 
+  background: rgba(59, 130, 246, 0.3); 
+  border-radius: 4px; 
+  transition: background 0.2s ease;
+}
+::-webkit-scrollbar-thumb:hover { 
+  background: rgba(59, 130, 246, 0.5); 
+
+}
+
+.raindrop img { width: 100%; height: 100%; object-fit: cover; border-radius: 50%; }
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.12); border-radius: 3px; }
+
